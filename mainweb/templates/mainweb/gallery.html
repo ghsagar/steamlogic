@@ -1,0 +1,59 @@
+{% extends  'mainweb/guru.html' %}
+{% load static %} 
+{% block css %}
+<style> 
+    .img-jmbo{
+        background-image:  linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(" {% static 'mainweb/images/try1_50.jpg' %}" );
+        height:800px;
+        width: 100%;
+}
+  </style>
+  {%endblock%}
+
+
+{% block gallery %}
+ 
+    <div class="container">
+        <div class="jumbotron img-jmbo">
+                <h1 class="text-white">Welcome to STEAME LOGIC</h1>
+                <p class="text-white">This is our official website, Please explore the site</p>
+                <button class="btn btn-primary">LIKE & SHARE</button>
+        </div>
+    </div> 
+
+    <div class=" container  mt-5  py-5 alert alert-success bg-dark text-white text-center" role="alert">
+        <strong>See Awesome Pictures</strong> 
+    </div>
+     
+ 
+
+    <!--Gallery section starts here-->
+
+    <div class="container gallery-container">
+        <div class="tz-gallery">
+            <div class="row">
+
+                {% for i in para %}
+
+                <div class="col-sm-6 col-md-4">
+                    <a class="lightbox" href="{{ i.gal_img.url }}">
+                        <img src="{{ i.gal_img.url }}" alt="">
+
+                    </a>
+                </div>
+
+                {% endfor %}
+                  
+    
+        </div>
+    
+    </div>
+
+{% endblock%}
+
+
+  
+
+    
+
+  

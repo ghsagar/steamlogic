@@ -1,0 +1,38 @@
+{% extends 'mainweb/guru.html'%}
+
+
+{% block events %}
+    
+
+<div class=" container py-5  alert alert-success text-center" role="alert">
+    <strong>Information about events and projects</strong> 
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+
+          {% for  i in info %}
+
+              <div class="col-md-6">
+                  <div class="card shadow" style="width: 32rem;">
+                      <div class="inner">
+                          <img src="{{i.image.url}}" class="card-img-top" alt="...">
+                      </div>
+                      
+                      <div class="card-body text-center">
+                          <h5 class="card-title">{{i.title }}</h5>
+                          <p class="card-text">{{ i.desc}}</p>
+                          <a href="#" class="btn btn-success">Learn more...</a>
+                      </div>
+                  </div>
+              </div>
+       
+      
+          {% endfor %}
+
+
+    </div>
+</div>
+
+
+{% endblock %}
